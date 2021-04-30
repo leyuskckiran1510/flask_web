@@ -1,0 +1,250 @@
+
+    <!DOCTYPE html>
+    <html>   
+        <head>
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/heroic-features.css') }}">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+              <div class="container">
+                <a class="navbar-brand" href="/homepage/">The Smart Deal</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/homepage/">Home
+                        <span class="sr-only">(current)</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </head> 
+        <body>
+    <div class="to-hide">
+    <div class="container" style=padding-top:5%>
+      <header class="jumbotron my-4">
+        <h3 class="display-3">Welcome To The Smart Deal</h3>
+        <p class="lead">A web based ecommerce price comparison app , not letting your penny to go on waste.</p>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="/Search_result" method="post">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" required=true  class="form-control form-control-lg" placeholder="Enter a product name" name="username">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary" onclick="loading()";>Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </header>
+  </div>
+</div>
+<div id="loading">
+  <iframe src="/loading" class="responsive-iframe" height=1080px width=720px frameborder=0></iframe>
+</div>
+    <script src="{{ url_for('static', filename='jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+<script type="text/javascript">// <![CDATA[
+      function loading(){
+          $("#to-hide").hide();
+          $("#loading").show();    
+      }
+// ]]></script>
+<style>
+  div#loading {
+    padding-top:56.25%;
+    left:50%;
+    width: 35px;
+    height: 35px;
+    display: none;
+    cursor: wait;
+    }
+    .responsive-iframe{
+      position: absolute;
+      top:0px;
+      left:0;
+      bottom:0;
+      right:0;
+      height: 100%;
+      width: 100%;
+    }
+</style>
+  </body>
+<style>
+    body {
+    color:hsl(130, 100%, 50%) 10%;
+    background-color:linear-gradient( 130deg, #0cade8 10%, #1710e4 100%);
+    }
+    .main99{
+     width:100%;
+     margin:100px auto;
+     position:relative;
+     top:30%;
+     justify-content:space-between;
+    }
+    .styl{
+        position: absolute 20% ;
+        transform-box: 50px;
+        width:20%;
+        font-size: 150%;
+    }
+    .styl{
+      text-indent:20px;
+      font-size:20px;
+      position:absolute 20% 50%;
+      width:70%;
+      border:none;
+      height:40px;
+      border-radius:25px;
+      outline:none;
+    -webkit-box-shadow: -6px 21px 51px -2px rgba(80, 212, 242, 0.21);
+    -moz-box-shadow: -6px 21px 51px -2px rgba(162, 172, 194, 0.21);
+    box-shadow: -6px 21px 51px -2px rgba(61, 54, 199, 0.542)
+    ;
+    }
+    .send_search{
+      position:relative;
+      cursor:pointer;
+      padding:1% 6% 1% 6%;
+      translate: 50px;
+      font-size: 150%;
+      z-index:1;
+      background-image: linear-gradient( 180deg, #5ed2fc 10%, #3932f5 100%);
+      border:none;
+      border-radius:20px;
+      outline:none;
+    }
+      </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+   <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+orginal is below
+
+
+
+         <div class='main99'>
+            <form action="/Search_result" method="post">
+                <label for="product_name"><b>Product Name</b></label>
+                        <input id="product_name" class="styl" type="text" name="username">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <p>
+                        <input class="send_search" type="submit">
+                    </p>
+                  </div>
+            </form>
+        </div>
+-->

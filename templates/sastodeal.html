@@ -1,0 +1,99 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading{
+  position:relative;
+  padding-left:8%;
+  font-size:225%;
+  }
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+    background-color: #a52d2d;
+    color: #f1f1f1;
+}
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>
+</head>
+<body>
+
+<div class="content">
+  {% if message %}
+  {% for ii in message[1]%}
+  <div id="navbar">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/heroic-features.css') }}">
+      <a class="active" href="javascript:void(0)"><b>SEARCH RESULT IN SASTODEAL</b></a>
+        </div>
+  <div class="container">
+  <div class="row">
+  <div class=" card border-primary mb-4">
+    <a href="{{ii[2]}}" target="_blank"><img class="rounded mx-auto d-block"  src="{{ii[0]}}" alt="{{ii[1]}}" width=50%></a>
+              <div class="product-detail-container">
+                <a href="{{ii[2]}}" target="_blank"> <h4 class="card-title" style=padding-left:1rem>{{ii[1]}}</h4></a>
+                <p class="card-text"  style=padding-left:1rem>{{ii[-1]}}</p>
+              </div>
+              <div class="card-footer">
+        <a href="{{ii[2]}}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Find Out More!</a>
+  </div>
+  </div>
+</div>
+</div>
+  {% endfor %}
+
+{% else %}
+<marquee> <h3>SORRY<br> DATA ARE NOT <br>AVILABLE <br>     RIGHT NOW FOR <br>    YOUR SEARCH<br>    IN SASTODEAL</h3></marquee>
+{% endif %}
+</div>
+<a href="./offline">If YoU ArE OfFlInE</a>
+</body>
+</html>
+
+
+
+  
+
